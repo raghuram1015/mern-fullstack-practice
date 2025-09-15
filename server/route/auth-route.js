@@ -1,6 +1,16 @@
 const express = require("express");
-const route = express.Router();
+const router = express.Router();
 
-route.get("/", (req, res) => {
-    res.status(200).send ("Hello World");
+router.route("/").get((req, res) => {
+    res
+    .status(200)
+    .send("Hello World, this is with route");
+});
+
+router.route("/register").get((req, res) => {
+    res
+    .status(200)
+    .send("Welcome to the Registration Page, this is with route");
 })
+
+module.exports = router;
